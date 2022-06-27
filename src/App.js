@@ -12,8 +12,17 @@ import "./App.css";
 import { OrderDetails } from "./data";
 
 function App() {
+  // let SSObj: SpreadsheetComponent;
+  // const Button = () => {
+  //   SSObj.save({
+  //     url: "https://ej2services.syncfusion.com/production/web-services/api/Spreadsheet/Save",
+  //     fileName: "Sample",
+  //     saveType: "Csv",
+  //   });
+  // };
   return (
     <div className="App">
+      {/* <button onClick={Button}>Save</button> */}
       <SpreadsheetComponent
         allowOpen={true}
         allowSave={true}

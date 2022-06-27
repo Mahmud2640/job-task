@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  ColumnDirective,
+  ColumnsDirective,
+  RangeDirective,
+  RangesDirective,
+  SheetDirective,
+  SheetsDirective,
+  SpreadsheetComponent,
+} from "@syncfusion/ej2-react-spreadsheet";
+import "./App.css";
+import { OrderDetails } from "./data";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SpreadsheetComponent
+        allowOpen={true}
+        allowSave={true}
+        saveUrl="https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save"
+      >
+        <SheetsDirective>
+          <SheetDirective>
+            <RangesDirective>
+              <RangeDirective dataSource={OrderDetails}></RangeDirective>
+            </RangesDirective>
+            <ColumnsDirective>
+              <ColumnDirective width={120}></ColumnDirective>
+              <ColumnDirective width={110}></ColumnDirective>
+              <ColumnDirective width={100}></ColumnDirective>
+              <ColumnDirective width={180}></ColumnDirective>
+              <ColumnDirective width={130}></ColumnDirective>
+              <ColumnDirective width={130}></ColumnDirective>
+            </ColumnsDirective>
+          </SheetDirective>
+        </SheetsDirective>
+      </SpreadsheetComponent>
     </div>
   );
 }
